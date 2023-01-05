@@ -25,7 +25,7 @@ mongoose.connect(db,{              //* <-- Yah hai MongoDB Atlas mein connect Ka
 }).then(()=>{
     console.log('MongoDB Atlas connection successfully.')
     app.get('/',(req,resp)=>{
-       const response = ({message:"API Test Works"});
+       const response = ({message:"API Test Updata Works"});
        resp.json(response);
    });
 
