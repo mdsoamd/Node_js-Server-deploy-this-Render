@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const Note = require('./models/Note');
+const Note = require('./models/note_schema');
 const bodyParser = require('body-parser');
 
 
@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 4000
 
 
-const db = "mongodb+srv://mdsomad:0YaroSQHFrjatTo2@cluster0.bf7qtzb.mongodb.net/notesdb";
+const db = "mongodb+srv://somad123:SOMAD123%40%23%24@cluster0.rs0s1jw.mongodb.net/notesdb?retryWrites=true&w=majority";
 
 mongoose.set('strictQuery', true);
 
@@ -57,7 +57,7 @@ mongoose.connect(db,{              //* <-- Yah hai MongoDB Atlas mein connect Ka
        content:req.body.content
     })
    await newNote.save();
-   const response = {message:"New Note Created!"} 
+   const response = {message:(`New Note Created!' 'id : ${req.body.id}`)} 
     resp.json(response);
  });
 
@@ -82,5 +82,5 @@ mongoose.connect(db,{              //* <-- Yah hai MongoDB Atlas mein connect Ka
 
 
 app.listen(PORT,()=>{
-   console.log("Server Running at http://localhost:5000")
+   console.log(`Server Running at http://localhost:${PORT}`);
 });

@@ -7,10 +7,12 @@ const noteSchema =  mongoose.Schema({
         unique:true,
         required:true
     },
+
     userid:{
         type:String,
         required:true
     },
+
     title:{
         type:String,
         required:true
@@ -18,6 +20,7 @@ const noteSchema =  mongoose.Schema({
     content:{
         type:String,
     },
+    
     dateadded:{
         type: Date,
         default:Date.now
